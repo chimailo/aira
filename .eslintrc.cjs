@@ -8,6 +8,7 @@ module.exports = {
     'plugin:@typescript-eslint/strict-type-checked',
     'plugin:@typescript-eslint/stylistic-type-checked',
     'plugin:react-hooks/recommended',
+    "plugin:tailwindcss/recommended",
     'prettier',
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
@@ -15,7 +16,13 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.app.json', './tsconfig.node.json'],
+    project: [
+      './tsconfig.json',
+      './tsconfig.app.json',
+      './tsconfig.node.json',
+      './tailwind.config.js',
+      './postcss.config.js'
+    ],
     tsconfigRootDir: __dirname,
   },
   plugins: ['react-refresh'],
@@ -25,4 +32,9 @@ module.exports = {
       { allowConstantExport: true },
     ],
   },
+  settings: {
+    react: {
+      version: "detect"
+    },
+  }
 }
