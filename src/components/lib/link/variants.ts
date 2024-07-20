@@ -12,7 +12,6 @@ export default cva(
       intent: {
         primary: '',
         secondary: '',
-        danger: '',
       },
       size: {
         xs: 'px-1.5 py-1 text-xs',
@@ -34,56 +33,36 @@ export default cva(
       {
         intent: 'primary',
         variant: 'filled',
-        class:
-          'bg-primary hover:bg-primary/90 active:bg-primary/85 text-primary-foreground',
+        class: 'bg-primary hover:bg-primary/90 text-primary-foreground',
       },
       {
         intent: 'primary',
         variant: 'outlined',
         class:
-          'border-primary text-primary hover:bg-primary/10 active:bg-primary/20 dark:hover:bg-primary/5 dark:border-primary-700/70 dark:hover:border-primary dark:text-primary-700',
+          'border-primary text-primary hover:bg-primary/10 dark:hover:bg-primary/5 dark:border-primary-700/70 dark:hover:border-primary dark:text-primary-700',
       },
       {
         intent: 'primary',
         variant: 'text',
         class:
-          'hover:bg-primary-100 text-primary-700 dark:hover:bg-primary-900/50 dark:text-primary-200',
+          'bg-gradient-to-r from-current to-current bg-no-repeat bg-left-bottom text-primary-700 dark:text-primary-200 bg-[length:0%_1px] hover:bg-[length:100%_1px] transition-[background-size] leading-tight p-0',
       },
       {
         intent: 'secondary',
         variant: 'filled',
-        class:
-          'bg-secondary text-secondary-foreground hover:bg-secondary/80 active:bg-secondary/85',
+        class: 'bg-secondary text-secondary-foreground hover:bg-secondary/80',
       },
       {
         intent: 'secondary',
         variant: 'outlined',
         class:
-          'border-gray-300 hover:border-gray-300 text-foreground hover:bg-gray-200/50 active:bg-gray-300 dark:hover:bg-gray-800/5 dark:border-gray-800/70 dark:hover:border-gray-800 dark:active:bg-gray-800/30',
+          'border-gray-300 hover:border-gray-300 text-foreground hover:bg-gray-200/50 dark:hover:bg-gray-800/5 dark:border-gray-800/70 dark:hover:border-gray-800',
       },
       {
         intent: 'secondary',
         variant: 'text',
         class:
-          'hover:bg-gray-200 active:bg-gray-300 text-foreground dark:hover:bg-gray-900/50 dark:active:bg-gray-900/30',
-      },
-      {
-        intent: 'danger',
-        variant: 'filled',
-        class:
-          'bg-danger text-danger-foreground hover:bg-danger/90 active:bg-danger/85',
-      },
-      {
-        intent: 'danger',
-        variant: 'outlined',
-        class:
-          'border-red-600 text-red-600 hover:bg-red-50 active:bg-red-100 dark:border-red-700/50 dark:hover:border-red-700/80 dark:hover:bg-red-600/10 dark:active:bg-red-700/30 dark:text-red-800',
-      },
-      {
-        intent: 'danger',
-        variant: 'text',
-        class:
-          'text-red-700 dark:text-red-800 hover:bg-danger/10 active:bg-danger/20',
+          'bg-gradient-to-r from-current to-current bg-no-repeat bg-left-bottom text-foreground bg-[length:0%_1px] hover:bg-[length:100%_1px] p-0 transition-[background-size] leading-tight',
       },
       { icon: true, size: 'xs', class: 'w-7 h-7 text-base leading-none' },
       { icon: true, size: 'sm', class: 'w-8 h-8 text-lg leading-none' },
