@@ -1,5 +1,6 @@
 {
-  "name": "aecio",
+  "name": "aira",
+  "description": "Aira is a component library built on react-aria.",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,13 +9,29 @@
     "build": "tsc -b && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "format": "prettier --write ./src",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.408.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-aria-components": "^1.2.1",
+    "react-dom": "^18.3.1",
+    "tailwind-merge": "^2.4.0"
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "^1.6.1",
+    "@storybook/addon-essentials": "^8.2.4",
+    "@storybook/addon-interactions": "^8.2.4",
+    "@storybook/addon-links": "^8.1.11",
+    "@storybook/addon-onboarding": "^8.1.11",
+    "@storybook/blocks": "^8.2.4",
+    "@storybook/react": "^8.2.4",
+    "@storybook/react-vite": "^8.2.4",
+    "@storybook/test": "^8.2.4",
     "@types/node": "^20.14.10",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
@@ -27,9 +44,11 @@
     "eslint-plugin-react": "^7.34.3",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
+    "eslint-plugin-storybook": "^0.8.0",
     "eslint-plugin-tailwindcss": "^3.17.4",
     "postcss": "^8.4.39",
     "prettier": "3.3.2",
+    "storybook": "^8.2.4",
     "tailwindcss": "^3.4.4",
     "typescript": "^5.2.2",
     "vite": "^5.3.1"
