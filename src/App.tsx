@@ -1,13 +1,14 @@
-import { Button, type ButtonProps } from '@/components/lib/button';
+import Button, { type ButtonProps } from '@/components/lib/button/Button.tsx';
+import { Heart } from 'lucide-react';
 
 const sizes: ButtonProps['size'][] = ['xs', 'sm', 'md', 'lg', 'xl'];
 const intents: ButtonProps['intent'][] = ['primary', 'secondary', 'danger'];
-const variants: ButtonProps['variant'][] = ['filled', 'outlined', 'ghost'];
+const variants: ButtonProps['variant'][] = ['filled', 'outlined', 'text'];
 
 function ButtonIntent({
   variant,
 }: {
-  variant: 'filled' | 'outlined' | 'ghost';
+  variant: 'filled' | 'outlined' | 'text';
 }) {
   return (
     <section className="space-y-4">
@@ -70,8 +71,8 @@ function App() {
         <h1 className="font-bold capitalize">Sizes</h1>
         <div className="flex items-center gap-6">
           {sizes.map((size) => (
-            <Button key={size} is="icon" size={size}>
-              &gt;
+            <Button key={size} icon size={size}>
+              <Heart className="text-inherti" />
             </Button>
           ))}
         </div>
@@ -80,8 +81,8 @@ function App() {
         <h1 className="font-bold capitalize">Intent</h1>
         <div className="flex items-center gap-6">
           {variants.map((item) => (
-            <Button key={item} is="icon" variant={item}>
-              &gt;
+            <Button key={item} icon variant={item}>
+              <Heart className="text-inherti" />
             </Button>
           ))}
         </div>
@@ -90,8 +91,8 @@ function App() {
         <h1 className="font-bold capitalize">Variants</h1>
         <div className="flex items-center gap-6">
           {intents.map((item) => (
-            <Button key={item} is="icon" intent={item}>
-              &gt;
+            <Button key={item} icon intent={item}>
+              <Heart className="text-inherti" />
             </Button>
           ))}
         </div>

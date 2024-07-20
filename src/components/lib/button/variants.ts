@@ -1,24 +1,13 @@
-import { cva, type VariantProps } from 'class-variance-authority';
-import {
-  Button as RA_Button,
-  type ButtonProps as RA_ButtonProps,
-} from 'react-aria-components';
+import { cva } from 'class-variance-authority';
 
-import { cn } from '@/lib/utils';
-
-// variant: text, filled(default), outlined
-// size: sm, md(default), lg
-// color: primary(default), secondary, danger
-// is: button(default), icon
-
-const buttonVariants = cva(
+export default cva(
   'inline-flex items-center justify-center whitespace-nowrap rounded text-sm/6 font-medium ring-offset-background transition-colors disabled:pointer-events-none disabled:opacity-50 data-[focused]:outline-none data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring data-[focus-visible]:ring-offset-2',
   {
     variants: {
       variant: {
         filled: '',
         outlined: 'border',
-        ghost: '',
+        text: '',
       },
       intent: {
         primary: '',
@@ -32,9 +21,13 @@ const buttonVariants = cva(
         lg: 'px-[22px] py-2 text-base/6',
         xl: 'px-7 py-2.5 text-lg',
       },
-      is: {
-        default: '',
-        icon: 'p-0',
+      icon: {
+        false: '',
+        true: 'p-0',
+      },
+      round: {
+        false: '',
+        true: 'rounded-full',
       },
     },
     compoundVariants: [
@@ -52,7 +45,7 @@ const buttonVariants = cva(
       },
       {
         intent: 'primary',
-        variant: 'ghost',
+        variant: 'text',
         class:
           'hover:bg-primary-100 text-primary-700 dark:hover:bg-primary-900/50 dark:text-primary-200',
       },
@@ -70,7 +63,7 @@ const buttonVariants = cva(
       },
       {
         intent: 'secondary',
-        variant: 'ghost',
+        variant: 'text',
         class:
           'hover:bg-gray-200 active:bg-gray-300 text-foreground dark:hover:bg-gray-900/50 dark:active:bg-gray-900/30',
       },
@@ -88,54 +81,22 @@ const buttonVariants = cva(
       },
       {
         intent: 'danger',
-        variant: 'ghost',
+        variant: 'text',
         class:
           'text-red-700 dark:text-red-800 hover:bg-danger/10 active:bg-danger/20',
       },
-      { is: 'icon', size: 'xs', class: 'w-7 h-7 text-base leading-none' },
-      { is: 'icon', size: 'sm', class: 'w-8 h-8 text-lg leading-none' },
-      { is: 'icon', size: 'md', class: 'w-9 h-9 text-xl leading-none' },
-      { is: 'icon', size: 'lg', class: 'w-10 h-10 text-[22px] leading-none' },
-      { is: 'icon', size: 'xl', class: 'w-12 h-12 text-2xl leading-none' },
+      { icon: true, size: 'xs', class: 'w-7 h-7 text-base leading-none' },
+      { icon: true, size: 'sm', class: 'w-8 h-8 text-lg leading-none' },
+      { icon: true, size: 'md', class: 'w-9 h-9 text-xl leading-none' },
+      { icon: true, size: 'lg', class: 'w-10 h-10 text-[22px] leading-none' },
+      { icon: true, size: 'xl', class: 'w-12 h-12 text-2xl leading-none' },
     ],
     defaultVariants: {
       variant: 'filled',
       size: 'md',
       intent: 'primary',
-      is: 'default',
+      icon: false,
+      round: false,
     },
   }
 );
-
-export interface ButtonProps
-  extends RA_ButtonProps,
-    VariantProps<typeof buttonVariants> {}
-
-const Button = ({
-  className,
-  variant,
-  intent,
-  size,
-  is,
-  ...props
-}: ButtonProps) => {
-  return (
-    <RA_Button
-      className={(values) =>
-        cn(
-          buttonVariants({
-            variant,
-            intent,
-            size,
-            is,
-            className:
-              typeof className === 'function' ? className(values) : className,
-          })
-        )
-      }
-      {...props}
-    />
-  );
-};
-
-export { Button };
