@@ -1,3 +1,4 @@
+import React, { type ForwardedRef } from 'react';
 import { type VariantProps } from 'class-variance-authority';
 import {
   Link as RA_Link,
@@ -10,36 +11,35 @@ import buttonVariants from '@/components/lib/link/variants.ts';
 
 interface LinkProps extends RA_LinkProps, VariantProps<typeof buttonVariants> {}
 
-const Link = ({
-  className,
-  intent,
-  variant,
-  size,
-  icon,
-  round,
-  ...props
-}: LinkProps) => {
-  return (
-    <RA_Link
-      className={(values: LinkRenderProps) =>
-        cn(
-          buttonVariants({
-            variant,
-            intent,
-            size,
-            icon,
-            round,
-            className:
-              typeof className === 'function'
-                ? className({ ...values, defaultClassName: undefined })
-                : className,
-          })
-        )
-      }
-      {...props}
-    />
-  );
-};
+const Link = React.forwardRef(
+  (props: LinkProps, ref: ForwardedRef<HTMLAnchorElement>) => {
+    const { className, intent, variant, size, icon, round } = props;
+
+    return (
+      <RA_Link
+        ref={ref}
+        className={(values: LinkRenderProps) =>
+          cn(
+            buttonVariants({
+              variant,
+              intent,
+              size,
+              icon,
+              round,
+              className:
+                typeof className === 'function'
+                  ? className({ ...values, defaultClassName: undefined })
+                  : className,
+            })
+          )
+        }
+        {...props}
+      />
+    );
+  }
+);
+
+Link.displayName = 'Link';
 
 export default Link;
 export type { LinkProps };
