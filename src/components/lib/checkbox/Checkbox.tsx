@@ -7,92 +7,86 @@ import {
 
 import { cn } from '@/lib/utils';
 
-interface CheckboxProps
-  extends AriaCheckboxProps,
-    VariantProps<typeof checkboxVariants> {}
-
-const checkboxVariants = cva(
-  'flex items-center gap-2 forced-color-adjust-none group data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50',
-  {
-    variants: {
-      variant: {
-        secondary: 'border-input hover:border-secondary',
-        primary: 'border-primary/50 hover:border-primary',
-      },
-      size: {
-        sm: 'text-sm',
-        md: 'text-base',
-        lg: 'text-lg ',
-      },
-    },
-    defaultVariants: {
-      variant: 'primary',
-    },
-  }
-);
-
 interface checkboxInputProps
   extends AriaCheckboxProps,
     VariantProps<typeof checkboxInputVariants> {}
 
 const checkboxInputVariants = cva(
-  'text-current border-2 border-input rounded flex items-center justify-center transition-all group-focus-visible:outline-none group-focus-visible:ring-2 group-focus-visible:ring-ring group-focus-visible:ring-offset-2',
+  'text-current border border-current rounded grid place-content-center transition-colors group-data-[selected]:border-primary before:scale-0 before:shadow-inner before:transition-transform before:origin-bottom-left  before:group-data-[selected]:scale-100  group-data-[focus-visible]:ring group-data-[focus-visible]:ring-ring group-data-[focus-visible]:ring-offset-2',
   {
     variants: {
       variant: {
-        secondary:
-          'hover:border-neutral-500 group-data-[pressed]:border-neutral-500 group-data-[selected]:border-neutral-500 group-data-[selected]:bg-neutral-500 group-data-[indeterminate]:border-neutral-500 group-data-[indeterminate]:bg-neutral-500',
-        primary:
-          'hover:border-primary group-data-[pressed]:border-primary group-data-[selected]:border-primary group-data-[selected]:bg-primary group-data-[indeterminate]:border-primary group-data-[indeterminate]:bg-primary',
+        filled: 'group-data-[selected]:bg-primary before:group-data-[selected]:bg-primary-foreground',
+        outlined: 'before:group-data-[selected]:bg-primary',
       },
       size: {
-        sm: 'text-sm w-4 h-4',
-        md: 'text-base w-5 h-5',
-        lg: 'text-lg w-6 h-6',
+        sm: 'w-3.5 h-3.5 before:w-2 before:h-2',
+        md: 'w-4 h-4 before:w-2.5 before:h-2.5',
+        lg: 'w-5 h-5 before:w-3 before:h-3',
       },
+      invalid: {
+        false: '',
+        true: 'border-danger',
+      },
+      indeterminate: {
+        false: 'before:[clip-path:polygon(14%_44%,0_65%,50%_100%,100%_16%,80%_0%,43%_62%)]',
+        true: 'before:[clip-path:polygon(100%_35%,100%_60%,0%_60%,0%_35%)]',
+      }
     },
     defaultVariants: {
-      variant: 'primary',
+      variant: 'filled',
+      size: 'md',
+      invalid: false,
+      indeterminate: false,
     },
   }
 );
 
 function CheckboxInput(props: checkboxInputProps) {
-  const { variant, size, className } = props;
+  const { size, invalid, variant, indeterminate, className } = props;
 
   return (
-    <div className={cn(checkboxVariants({ size, variant }), className)}>
-      <svg
-        viewBox="0 0 18 18"
-        aria-hidden="true"
-        className={cn(
-          checkboxVariants({ size }),
-          'fill-none transition-all stroke-2 stroke-white'
-        )}
-      >
-        <polyline points="1 9 7 14 15 4" />
-      </svg>
+    <div className={cn(checkboxInputVariants({ size, invalid, variant, indeterminate }), className)}>
     </div>
   );
 }
 
+interface CheckboxProps
+  extends AriaCheckboxProps,
+    VariantProps<typeof checkboxVariants> {
+      invalid: boolean;
+      variant: 'filled' | 'outlined'
+    }
+
+const checkboxVariants = cva(
+  'grid group place-items-center data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50',
+  {
+    variants: {
+      size: {
+        sm: 'text-sm grid-cols-[0.75rem_auto] gap-1',
+        md: 'text-base grid-cols-[1rem_auto] gap-1.5',
+        lg: 'text-lg grid-cols-[1.25rem_auto] gap-2',
+      },
+    },
+    defaultVariants: {
+      size: 'md',
+    },
+  }
+);
+
 const Checkbox = React.forwardRef(
   (props: CheckboxProps, ref: ForwardedRef<HTMLLabelElement>) => {
-    const { variant, size, className, children } = props;
+    const { size, invalid, variant, className, children } = props;
 
     return (
       <AriaCheckBox
         ref={ref}
-        className={cn(checkboxVariants({ size, variant }), className)}
+        className={cn(checkboxVariants({ size }), className)}
         {...props}
       >
         {({ isIndeterminate }) => (
           <>
-            <div className="checkbox">
-              <svg viewBox="0 0 18 18" aria-hidden="true">
-                <polyline points="1 9 7 14 15 4" />
-              </svg>
-            </div>
+            <CheckboxInput size={size} invalid={invalid} variant={variant} indeterminate={isIndeterminate} />
             {children}
           </>
         )}
