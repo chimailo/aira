@@ -4,25 +4,6 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 180 29% 5%;
-
-    --primary: 174 100% 32%;
-    --primary-foreground: 168 88% 97%;
-
-    --secondary: 20 6% 90%;
-    --secondary-foreground: 180 29% 5%;
-
-    --success: 142.13 76.22% 36.27%;
-    --success-foreground: 0 0% 98.04%;
-
-    --danger: 0 72.22% 50.59%;
-    --danger-foreground: 0 0% 98.04%;
-
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 173 97%42%;
-
     --primary-50: 168 88% 97%;
     --primary-100: 168 100% 89%;
     --primary-200: 168 100% 78%;
@@ -34,26 +15,90 @@
     --primary-800: 175 84% 22%;
     --primary-900: 176 73% 19%;
     --primary-950: 179 100% 10%;
-  }
 
-  .dark {
-    --background: 180 29% 5%;
-    --foreground: 168 88% 97%;
+    /* theme('colors.neutral.50') */
+    --secondary-50: 0 0% 98%;
+    /* theme('colors.neutral.100') */
+    --secondary-100: 0 0% 96%;
+    /* theme('colors.neutral.200') */
+    --secondary-200: 0 0% 90%;
+    /* theme('colors.neutral.300') */
+    --secondary-300: 0 0% 83.14%;
+    /* theme('colors.neutral.400') */
+    --secondary-400: 0 0% 64%;
+    /* theme('colors.neutral.500') */
+    --secondary-500: 0 0% 45%;
+    /* theme('colors.neutral.600') */
+    --secondary-600: 0 0% 32.16%;
+    /* theme('colors.neutral.700') */
+    --secondary-700: 0 0% 25%;
+    /* theme('colors.neutral.800') */
+    --secondary-800: 0 0% 15%;
+    /* theme('colors.neutral.900') */
+    --secondary-900: 0 0% 9%;
+    --secondary-950: 180 29% 5%;
 
-    --primary: 175 94% 26%;
-    --primary-foreground: 168 100% 79%;
+    --background: 0 0% 100%;
+    --foreground: var(--secondary-950);
 
-    --secondary: 179 100% 10%;
-    --secondary-foreground: 168 100% 79%;
+    --primary: var(--primary-600);
+    --primary-foreground: var(--primary-50);
 
-    --success: 143.81 61.17% 20%;
+    --secondary: var(--secondary-200);
+    --secondary-foreground: var(--secondary-950);
+
+    --success: 142.13 76.22% 36.27%;
     --success-foreground: 0 0% 98.04%;
 
-    --danger: 0 62.82% 30.59%;
+    --danger: 0 72.22% 50.59%;
     --danger-foreground: 0 0% 98.04%;
 
-    --border: 0 0% 9.02%;
-    --input: 0 0% 9.02%;
-    --ring: 173 97% 42%;
+    --border: var(--secondary-300);
+    --input: var(--secondary-300);
+    --ring: var(--primary-500);
+  }
+
+  /* @media (prefers-color-scheme:dark) {
+    :root {
+      --background: var(--secondary-950);
+      --foreground: var(--primary-50);
+
+      --primary: var(--primary-700);
+      --primary-foreground: var(--primary-200);
+
+      --secondary: var(--secondary-900);
+      --secondary-foreground: var(--secondary-100);
+
+      --success: 142.13 76.22% 36.27%;
+      --success-foreground: 0 0% 98.04%;
+
+      --danger: 0 72.22% 50.59%;
+      --danger-foreground: 0 0% 98.04%;
+
+      --border: var(--secondary-800);
+      --input: var(--secondary-800);
+      --ring: var(--primary-700);
+    }
+  } */
+
+  :root[data-color-scheme='dark'] {
+    --background: var(--secondary-900);
+    --foreground: var(--primary-50);
+
+    --primary: var(--primary-700);
+    --primary-foreground: var(--primary-100);
+
+    --secondary: var(--secondary-800);
+    --secondary-foreground: var(--secondary-200);
+
+    --success: 142.13 76.22% 36.27%;
+    --success-foreground: 0 0% 98.04%;
+
+    --danger: 0 73.71% 41.76%;
+    --danger-foreground: 0 93.33% 94.12%;
+
+    --border: var(--secondary-700);
+    --input: var(--secondary-700);
+    --ring: var(--primary-700);
   }
 }

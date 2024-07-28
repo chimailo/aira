@@ -33,36 +33,35 @@ export default cva(
       {
         intent: 'primary',
         variant: 'filled',
-        class: 'bg-primary hover:bg-primary/90 text-primary-foreground',
+        class:
+          'bg-primary hover:bg-primary/90 active:bg-primary/85 text-primary-foreground',
       },
       {
         intent: 'primary',
         variant: 'outlined',
         class:
-          'border-primary text-primary hover:bg-primary/10 dark:hover:bg-primary/5 dark:border-primary-700/70 dark:hover:border-primary dark:text-primary-700',
+          'border-primary text-primary hover:bg-primary/10 active:bg-primary/20',
       },
       {
         intent: 'primary',
         variant: 'text',
-        class:
-          'bg-gradient-to-r from-current to-current bg-no-repeat bg-left-bottom text-primary-700 dark:text-primary-200 bg-[length:0%_1px] hover:bg-[length:100%_1px] transition-[background-size] leading-tight p-0',
+        class: 'hover:bg-primary/10 text-primary active:bg-primary/15',
       },
       {
         intent: 'secondary',
         variant: 'filled',
-        class: 'bg-secondary text-secondary-foreground hover:bg-secondary/80',
+        class:
+          'bg-secondary text-secondary-foreground hover:bg-secondary/80 active:bg-secondary/85',
       },
       {
         intent: 'secondary',
         variant: 'outlined',
-        class:
-          'border-gray-300 hover:border-gray-300 text-foreground hover:bg-gray-200/50 dark:hover:bg-gray-800/5 dark:border-gray-800/70 dark:hover:border-gray-800',
+        class: 'border-border text-secondary-foreground hover:bg-secondary/50 active:bg-secondary/60',
       },
       {
         intent: 'secondary',
         variant: 'text',
-        class:
-          'bg-gradient-to-r from-current to-current bg-no-repeat bg-left-bottom text-foreground bg-[length:0%_1px] hover:bg-[length:100%_1px] p-0 transition-[background-size] leading-tight',
+        class: 'hover:bg-secondary/50 text-secondary-foreground active:bg-secondary/65',
       },
       { icon: true, size: 'xs', class: 'w-7 h-7 text-base leading-none' },
       { icon: true, size: 'sm', class: 'w-8 h-8 text-lg leading-none' },

@@ -41,13 +41,12 @@ export default cva(
         intent: 'primary',
         variant: 'outlined',
         class:
-          'border-primary text-primary hover:bg-primary/10 active:bg-primary/20 dark:hover:bg-primary/5 dark:border-primary-700/70 dark:hover:border-primary dark:text-primary-700',
+          'border-primary text-primary hover:bg-primary/10 active:bg-primary/20',
       },
       {
         intent: 'primary',
         variant: 'text',
-        class:
-          'hover:bg-primary-100 text-primary-700 dark:hover:bg-primary-900/50 dark:text-primary-200',
+        class: 'hover:bg-primary/10 text-primary active:bg-primary/15',
       },
       {
         intent: 'secondary',
@@ -58,14 +57,12 @@ export default cva(
       {
         intent: 'secondary',
         variant: 'outlined',
-        class:
-          'border-gray-300 hover:border-gray-300 text-foreground hover:bg-gray-200/50 active:bg-gray-300 dark:hover:bg-gray-800/5 dark:border-gray-800/70 dark:hover:border-gray-800 dark:active:bg-gray-800/30',
+        class: 'border-border text-secondary-foreground hover:bg-secondary/50 active:bg-secondary/60',
       },
       {
         intent: 'secondary',
         variant: 'text',
-        class:
-          'hover:bg-gray-200 active:bg-gray-300 text-foreground dark:hover:bg-gray-900/50 dark:active:bg-gray-900/30',
+        class: 'hover:bg-secondary/50 text-secondary-foreground active:bg-secondary/65',
       },
       {
         intent: 'danger',
@@ -76,14 +73,12 @@ export default cva(
       {
         intent: 'danger',
         variant: 'outlined',
-        class:
-          'border-red-600 text-red-600 hover:bg-red-50 active:bg-red-100 dark:border-red-700/50 dark:hover:border-red-700/80 dark:hover:bg-red-600/10 dark:active:bg-red-700/30 dark:text-red-800',
+        class: 'border-danger text-danger hover:bg-danger/5 active:bg-danger/10',
       },
       {
         intent: 'danger',
         variant: 'text',
-        class:
-          'text-red-700 dark:text-red-800 hover:bg-danger/10 active:bg-danger/20',
+        class: 'text-danger hover:bg-danger/10 active:bg-danger/15',
       },
       { icon: true, size: 'xs', class: 'w-7 h-7 text-base leading-none' },
       { icon: true, size: 'sm', class: 'w-8 h-8 text-lg leading-none' },
