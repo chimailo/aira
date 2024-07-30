@@ -53,6 +53,9 @@
     --danger: 0 72.22% 50.59%;
     --danger-foreground: 0 0% 98.04%;
 
+    --muted: var(--secondary-100);
+    --muted-foreground: var(--secondary-500);
+
     --border: var(--secondary-300);
     --input: var(--secondary-300);
     --ring: var(--primary-500);
@@ -75,6 +78,9 @@
       --danger: 0 72.22% 50.59%;
       --danger-foreground: 0 0% 98.04%;
 
+    --muted: var(--secondary-800);
+    --muted-foreground: var(--secondary-400);
+
       --border: var(--secondary-800);
       --input: var(--secondary-800);
       --ring: var(--primary-700);
@@ -96,6 +102,9 @@
 
     --danger: 0 73.71% 41.76%;
     --danger-foreground: 0 93.33% 94.12%;
+
+    --muted: var(--secondary-800);
+    --muted-foreground: var(--secondary-400);
 
     --border: var(--secondary-700);
     --input: var(--secondary-700);

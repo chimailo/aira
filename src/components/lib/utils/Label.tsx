@@ -11,29 +11,22 @@ interface LabelProps
   extends RAC_LabelProps,
     VariantProps<typeof labelVariants> {}
 
-const labelVariants = cva(
-  'text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 data-[disabled]:cursor-not-allowed data-[disabled]:opacity-70',
-  {
-    variants: {
-      error: {
-        false: '',
-        true: 'text-danger',
-      },
-    },
-    defaultVariants: {
-      error: false,
-    },
-  }
-);
+const labelVariants = cva([
+  'text-sm font-medium leading-none',
+  /* Disabled */
+  'data-[disabled]:cursor-not-allowed data-[disabled]:opacity-70',
+  /* Invalid */
+  'group-data-[invalid]:text-danger',
+]);
 
 const Label = React.forwardRef(
   (props: LabelProps, ref: ForwardedRef<HTMLLabelElement>) => {
-    const { error, className } = props;
+    const { className } = props;
 
     return (
       <RAC_Label
         ref={ref}
-        className={cn(labelVariants({ error }), className)}
+        className={cn(labelVariants(), className)}
         {...props}
       />
     );
