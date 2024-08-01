@@ -24,3 +24,4 @@ const FieldError = forwardRef(
 FieldError.displayName = 'FieldError';
 
 export default FieldError;
+export type { FieldErrorProps };
