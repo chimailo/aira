@@ -1,3 +1,3 @@
-export { default as Label } from './Label';
-export { default as FieldDescription } from  './Description.tsx'
-export { default as FieldError } from './FieldError.tsx'
+export { default as Label, type LabelProps } from './Label';
+export { default as FieldDescription, type FieldDescriptionProps } from  './Description.tsx'
+export { default as FieldError, type FieldErrorProps } from './FieldError.tsx'
