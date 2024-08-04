@@ -45,7 +45,7 @@ export default cva(
       {
         intent: 'primary',
         variant: 'text',
-        class: 'hover:bg-primary/10 text-primary active:bg-primary/15',
+        class: 'text-primary bg-gradient-to-r from-current to-current bg-no-repeat bg-left-bottom bg-[length:0%_1px] hover:bg-[length:100%_1px] transition-[background-size] leading-tight p-0',
       },
       {
         intent: 'secondary',
@@ -61,13 +61,13 @@ export default cva(
       {
         intent: 'secondary',
         variant: 'text',
-        class: 'hover:bg-secondary/50 text-secondary-foreground active:bg-secondary/65',
+        class: 'text-secondary-foreground bg-gradient-to-r from-current to-current bg-no-repeat bg-left-bottom bg-[length:0%_1px] hover:bg-[length:100%_1px] transition-[background-size] leading-tight p-0',
       },
-      { icon: true, size: 'xs', class: 'w-7 h-7 text-base leading-none' },
-      { icon: true, size: 'sm', class: 'w-8 h-8 text-lg leading-none' },
-      { icon: true, size: 'md', class: 'w-9 h-9 text-xl leading-none' },
-      { icon: true, size: 'lg', class: 'w-10 h-10 text-[22px] leading-none' },
-      { icon: true, size: 'xl', class: 'w-12 h-12 text-2xl leading-none' },
+      { icon: true, size: 'xs', class: 'size-7' },
+      { icon: true, size: 'sm', class: 'size-8' },
+      { icon: true, size: 'md', class: 'size-9' },
+      { icon: true, size: 'lg', class: 'size-10' },
+      { icon: true, size: 'xl', class: 'size-12' },
     ],
     defaultVariants: {
       variant: 'filled',
