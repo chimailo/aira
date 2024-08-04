@@ -1,4 +1,4 @@
-import React, { type ForwardedRef } from 'react';
+import React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 import {
   Input as RAC_Input,
@@ -27,19 +27,17 @@ const inputVariants = cva(
   }
 );
 
-const Input = React.forwardRef(
-  (props: InputProps, ref: ForwardedRef<HTMLInputElement>) => {
-    const { variant, className } = props;
+const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
+  const { variant, className, ...rest } = props;
 
-    return (
-      <RAC_Input
-        ref={ref}
-        className={cn(inputVariants({ variant }), className)}
-        {...props}
-      />
-    );
-  }
-);
+  return (
+    <RAC_Input
+      ref={ref}
+      className={cn(inputVariants({ variant, className }))}
+      {...rest}
+    />
+  );
+});
 
 Input.displayName = 'Input';
 

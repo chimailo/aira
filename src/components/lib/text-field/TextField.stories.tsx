@@ -35,7 +35,7 @@ export const DefaultInput: Story = {
           Username
         </Label>
         <Input />
-        {args.isInvalid && <FieldError>Invalid input</FieldError>}
+        <FieldError>Invalid input</FieldError>
       </TextField>
     );
   },
@@ -59,7 +59,7 @@ export const PrimaryInput: Story = {
           Username
         </Label>
         <Input variant="primary" />
-        {args.isInvalid && <FieldError>Invalid input</FieldError>}
+        <FieldError>Invalid input</FieldError>
       </TextField>
     );
   },
@@ -106,7 +106,7 @@ export const WithInputDescription: Story = {
         </Label>
         <Input />
         <FieldDescription>Only alpha-num chars allowed</FieldDescription>
-        {args.isInvalid && <FieldError>Invalid input</FieldError>}
+        <FieldError>Invalid input</FieldError>
       </TextField>
     );
   },
@@ -130,7 +130,7 @@ export const DefaultTextarea: Story = {
           Comments
         </Label>
         <Textarea />
-        {args.isInvalid && <FieldError>Invalid input</FieldError>}
+        <FieldError>Invalid input</FieldError>
       </TextField>
     );
   },
@@ -154,7 +154,7 @@ export const PrimaryTextarea: Story = {
           Comments
         </Label>
         <Textarea variant="primary" />
-        {args.isInvalid && <FieldError>Invalid input</FieldError>}
+        <FieldError>Invalid input</FieldError>
       </TextField>
     );
   },
@@ -197,7 +197,7 @@ export const WithTextareaDescription: Story = {
         </Label>
         <Textarea />
         <FieldDescription>Only alpha-num chars allowed</FieldDescription>
-        {args.isInvalid && <FieldError>Invalid input</FieldError>}
+        <FieldError>Invalid input</FieldError>
       </TextField>
     );
   },
