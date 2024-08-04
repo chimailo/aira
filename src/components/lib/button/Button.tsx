@@ -1,4 +1,4 @@
-import React, { type ForwardedRef } from 'react';
+import React from 'react';
 import { type VariantProps } from 'class-variance-authority';
 import {
   Button as RA_Button,
@@ -12,10 +12,8 @@ interface ButtonProps
   extends RA_ButtonProps,
     VariantProps<typeof buttonVariants> {}
 
-const Button = React.forwardRef(
-  (props: ButtonProps, ref: ForwardedRef<HTMLButtonElement>) => {
-    const { className, variant, intent, size, icon, round } = props;
-
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, variant, intent, size, icon, round, ...props }, ref) => {
     return (
       <RA_Button
         ref={ref}
