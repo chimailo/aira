@@ -1,4 +1,4 @@
-import React, { type ForwardedRef } from 'react';
+import React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 import {
   Checkbox as RACCheckBox,
@@ -83,10 +83,8 @@ const checkboxVariants = cva(
   }
 );
 
-const Checkbox = React.forwardRef(
-  (props: CheckboxProps, ref: ForwardedRef<HTMLLabelElement>) => {
-    const { size, variant, className, children } = props;
-
+const Checkbox = React.forwardRef<HTMLLabelElement, CheckboxProps>(
+  ({ size, variant, className, children, ...props }, ref) => {
     return (
       <RACCheckBox
         ref={ref}

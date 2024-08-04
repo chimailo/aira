@@ -54,7 +54,7 @@
     --danger-foreground: 0 0% 98.04%;
 
     --muted: var(--secondary-100);
-    --muted-foreground: var(--secondary-500);
+    --muted-foreground: var(--secondary-400);
 
     --border: var(--secondary-300);
     --input: var(--secondary-300);

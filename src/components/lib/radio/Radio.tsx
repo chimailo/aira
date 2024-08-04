@@ -1,4 +1,4 @@
-import React, { type ForwardedRef } from 'react';
+import React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 import {
   Radio as RACRadio,
@@ -69,10 +69,8 @@ const radioVariants = cva(
   }
 );
 
-const Radio = React.forwardRef(
-  (props: RadioProps, ref: ForwardedRef<HTMLLabelElement>) => {
-    const { className, children } = props;
-
+const Radio = React.forwardRef<HTMLLabelElement, RadioProps>(
+  ({ className, children, ...props }, ref) => {
     return (
       <RACRadio ref={ref} className={cn(radioVariants(), className)} {...props}>
         {() => (

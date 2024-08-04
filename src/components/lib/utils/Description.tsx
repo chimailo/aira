@@ -1,10 +1,10 @@
-import { forwardRef, type ForwardedRef } from 'react';
+import { forwardRef } from 'react';
 import { Text, type TextProps } from 'react-aria-components';
 
 import { cn } from '@/lib/utils';
 
-const FieldDescription = forwardRef(
-  ({ className, ...props }: TextProps, ref: ForwardedRef<HTMLSpanElement>) => {
+const FieldDescription = forwardRef<HTMLSpanElement, TextProps>(
+  ({ className, ...props }, ref) => {
     return (
       <Text
         ref={ref}

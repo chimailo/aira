@@ -1,4 +1,4 @@
-import React, { type ForwardedRef } from 'react';
+import React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 import {
   Label as RAC_Label,
@@ -40,10 +40,8 @@ const labelVariants = cva(
   }
 );
 
-const Label = React.forwardRef(
-  (props: LabelProps, ref: ForwardedRef<HTMLLabelElement>) => {
-    const { invalid, required, disabled, className } = props;
-
+const Label = React.forwardRef<HTMLLabelElement, LabelProps>(
+  ({ invalid, required, disabled, className, ...props }, ref) => {
     return (
       <RAC_Label
         ref={ref}

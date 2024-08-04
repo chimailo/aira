@@ -1,4 +1,4 @@
-import { forwardRef, type ForwardedRef } from 'react';
+import { forwardRef } from 'react';
 import {
   FieldError as RACFieldError,
   type FieldErrorProps,
@@ -6,11 +6,8 @@ import {
 
 import { cn } from '@/lib/utils';
 
-const FieldError = forwardRef(
-  (
-    { className, ...props }: FieldErrorProps,
-    ref: ForwardedRef<HTMLSpanElement>
-  ) => {
+const FieldError = forwardRef<HTMLSpanElement, FieldErrorProps>(
+  ({ className, ...props }, ref) => {
     return (
       <RACFieldError
         ref={ref}
